@@ -14,7 +14,10 @@ class Director extends Component {
   }
 
   handleChange(view) {
-    this.setState({ view: view });
+    let newView = `${view}`
+    console.log(newView);
+    this.setState({ view: newView });
+    console.log(this.state.view);
   }
 
   render() {
@@ -22,15 +25,31 @@ class Director extends Component {
     if (page === 'Home') {
       return (
         <div>
-        <NavBar />
-        <GameSelection />
+        <NavBar 
+          loggedIn={this.state.loggedIn}
+          handleChange={this.handleChange}  
+        />
+        <GameSelection handleChange={this.handleChange}/>
         </div>
       )
     } else if (page === "PF" || page === "SR" || page === "CoC") {
       return (
         <div>
-          <NavBar />
+          <NavBar 
+            loggedIn={this.state.loggedIn}
+            handleChange={this.handleChange}  
+          />
           <Sorry />
+        </div>
+      )
+    } else if (page === "Login") {
+      return (
+        <div>
+          <NavBar 
+            loggedIn={this.state.loggedIn}
+            handleChange={this.handleChange}  
+          />
+
         </div>
       )
     }

@@ -3,24 +3,51 @@ import React, { Component } from 'react';
 class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleHomeClick = this.handleHomeClick.bind(this);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleRegClick = this.handleRegClick.bind(this);
+    this.state = {
+      loggedIn : this.props.loggedIn,
+      username : null
+    }
   } 
 
-  handleClick(e) {
-    let view = e.target;
-    console.log(view, this.props);
-    // this.props.handleChange(view);
+  handleHomeClick() {
+    let view = "Home";
+    this.props.handleChange(view);
+  }
+
+  handleLoginClick() {
+    let view = "Login";
+    this.props.handleChange(view);
+  }
+
+  handleRegClick() {
+    let view = "Register";
+    this.props.handleChange(view);
   }
 
   render() {
-    return (
-      <div>
-        <button onClick={(e) => this.handleClick(e)}>Home</button>
-        <h1>RPG Ultimate</h1>
-        {/* <button onClick={this.handleClick()}>Login</button> */}
-        {/* <button onClick={this.handleClick()}>Register</button> */}
-      </div>
-    )
+    if (!this.state.loggedIn) {
+      return (
+        <div>
+          <button onClick={this.handleHomeClick}>Home</button>
+          <h1>RPG Ultimate</h1>
+          <button onClick={this.handleLoginClick}>Login</button>
+          <button onClick={this.handleRegClick}>Register</button>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <button onClick={this.handleHomeClick}>Home</button>
+          <h1>RPG Ultimate</h1>
+          <div>
+            <h2>Logged in as: {this.state.username}</h2>
+          </div>
+        </div>
+      )
+    }
   }
 }
 
