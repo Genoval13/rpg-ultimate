@@ -3,10 +3,10 @@ module.exports = {
     client: "pg",
     connection: "postgres://localhost/rpg-data",
     migrations: {
-      directory: "./backend/db/migrations"
+      directory: "./database/db/migrations"
     },
     seeds: {
-      directory: "./backend/db/seeds/dev"
+      directory: "./database/db/seeds/dev"
     },
     useNullAsDefault: true
   }
