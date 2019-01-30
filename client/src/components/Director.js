@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import NavBar from './NavBar';
 import GameSelection from './GameSelection';
 import Sorry from './Sorry';
+import Login from './Login';
+import DndHome from './dnd/DndHome';
 
 class Director extends Component {
   constructor () {
@@ -15,9 +17,7 @@ class Director extends Component {
 
   handleChange(view) {
     let newView = `${view}`
-    console.log(newView);
     this.setState({ view: newView });
-    console.log(this.state.view);
   }
 
   render() {
@@ -42,14 +42,24 @@ class Director extends Component {
           <Sorry />
         </div>
       )
-    } else if (page === "Login") {
+    } else if (page === "Login" || page === "Register") {
       return (
         <div>
           <NavBar 
             loggedIn={this.state.loggedIn}
             handleChange={this.handleChange}  
           />
-
+          <Login view={page}/>
+        </div>
+      )
+    } else if (page === "D&D") {
+      return (
+        <div>
+          <NavBar
+            loggedIn={this.state.loggedIn}
+            handleChange={this.handleChange} 
+          />
+          <DndHome />
         </div>
       )
     }
