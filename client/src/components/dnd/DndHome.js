@@ -38,7 +38,7 @@ class DndHome extends Component {
       return (
         <NewChar />
       )
-    } else if (page === '1') {
+    } else if (page === '0' || '1' || '2' || '3' || '4' || '5' || '6' || '7') {
       return (
         <CharacterViewer
           info={this.state.characters[page]}
