@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../style/NavBar.css';
 
 class NavBar extends Component {
   constructor(props) {
@@ -18,17 +19,19 @@ class NavBar extends Component {
   render() {
     if (!this.state.loggedIn) {
       return (
-        <div>
-          <button name='Home' onClick={this.handleNBClick}>Home</button>
-          <h1>RPG Ultimate</h1>
-          <button name='Login' onClick={this.handleNBClick}>Login/Register</button>
+        <div className='navBar'>
+          <ul className='navList'>
+            <li className='navItem'><button className='homeBtn' name='Home' onClick={this.handleNBClick}>Home</button></li>
+            <li className='navItem'><h1 className='navTitle'>RPG Ultimate</h1></li>
+            <li className='navItem'><button className='loginBtn' name='Login' onClick={this.handleNBClick}>Login/Register</button></li>
+          </ul>
         </div>
       )
     } else {
       return (
         <div>
-          <button onClick={this.handleHomeClick}>Home</button>
-          <h1>RPG Ultimate</h1>
+          <button className='homeBtn' onClick={this.handleHomeClick}>Home</button>
+          <h1 className='navTitle'>RPG Ultimate</h1>
           <div>
             <h2>Logged in as: {this.state.username}</h2>
           </div>

@@ -4,6 +4,7 @@ import GameSelection from './GameSelection';
 import Sorry from './Sorry';
 import Login from './Login';
 import DndHome from './dnd/DndHome';
+import '../style/Director.css';
 
 class Director extends Component {
   constructor () {
@@ -24,7 +25,7 @@ class Director extends Component {
     let page = this.state.view;
     if (page === 'Home') {
       return (
-        <div>
+        <div className='home'>
         <NavBar 
           loggedIn={this.state.loggedIn}
           handleMainChange={this.handleMainChange}  
@@ -32,9 +33,9 @@ class Director extends Component {
         <GameSelection handleMainChange={this.handleMainChange}/>
         </div>
       )
-    } else if (page === "PF" || page === "SR" || page === "CoC") {
+    } else if (page === "PF" || "SR" || "CoC") {
       return (
-        <div>
+        <div className='sorry'>
           <NavBar 
             loggedIn={this.state.loggedIn}
             handleMainChange={this.handleMainChange}  
@@ -44,7 +45,7 @@ class Director extends Component {
       )
     } else if (page === "Login") {
       return (
-        <div>
+        <div className='login'>
           <NavBar 
             loggedIn={this.state.loggedIn}
             handleMainChange={this.handleMainChange}  
@@ -54,7 +55,7 @@ class Director extends Component {
       )
     } else if (page === "DnD") {
       return (
-        <div>
+        <div className='dnd'>
           <NavBar
             loggedIn={this.state.loggedIn}
             handleMainChange={this.handleMainChange} 
