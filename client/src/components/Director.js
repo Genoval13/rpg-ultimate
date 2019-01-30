@@ -4,6 +4,7 @@ import GameSelection from './GameSelection';
 import Sorry from './Sorry';
 import Login from './Login';
 import DndHome from './dnd/DndHome';
+import NewChar from './dnd/NewChar';
 
 class Director extends Component {
   constructor () {
@@ -59,7 +60,19 @@ class Director extends Component {
             loggedIn={this.state.loggedIn}
             handleChange={this.handleChange} 
           />
-          <DndHome />
+          <DndHome 
+            handleChange={this.handleChange}
+          />
+        </div>
+      )
+    } else if (page === 'NewChar') {
+      return (
+        <div>
+          <NavBar
+            loggedIn={this.state.loggedIn}
+            handleChange={this.handleChange} 
+          />
+          <NewChar />
         </div>
       )
     }

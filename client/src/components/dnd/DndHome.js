@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Character from './Character';
+import CharacterItem from './CharacterItem';
 
 class DndHome extends Component {
   constructor(props) {
@@ -9,16 +9,20 @@ class DndHome extends Component {
     }
   }
 
+  handleNewClick() {
+    this.props.handleChange('NewChar');
+  }
+
   render() {
     return (
       <div>
-        <button>Create New Character</button>
+        <button onClick={this.handleNewClick}>Create New Character</button>
         <div>
           <ul>
             {this.state.characters.map(character => {
               let idx = this.state.characters.indexOf(character);
               return (
-                <Character 
+                <CharacterItem 
                   key={this.state.characters.indexOf(character)}
                   info={this.state.characters[idx]}
                 />
