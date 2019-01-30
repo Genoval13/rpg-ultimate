@@ -6,8 +6,9 @@ class CharacterItem extends Component {
     this.handleCharClick = this.handleCharClick.bind(this);
   }
 
-  handleCharClick() {
-    this.props.handleChange('')
+  handleCharClick(ev) {
+    let view = ev.target.name;
+    this.props.passingUpChange(view);
   }
 
   render() {
@@ -16,7 +17,7 @@ class CharacterItem extends Component {
         <h3>{this.props.info.name}</h3>
         <h3>{this.props.info.race}</h3>
         <h3>{this.props.info.class}</h3>
-        <button onClick={this.handleCharClick}></button>
+        <button name={this.props.index} onClick={this.handleCharClick}>View</button>
       </div>
     )
   }

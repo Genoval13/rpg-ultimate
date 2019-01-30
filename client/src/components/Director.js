@@ -4,7 +4,6 @@ import GameSelection from './GameSelection';
 import Sorry from './Sorry';
 import Login from './Login';
 import DndHome from './dnd/DndHome';
-import NewChar from './dnd/NewChar';
 
 class Director extends Component {
   constructor () {
@@ -13,10 +12,10 @@ class Director extends Component {
       view: 'Home',
       loggedIn: false
     }
-    this.handleChange = this.handleChange.bind(this);
+    this.handleMainChange = this.handleMainChange.bind(this);
   }
 
-  handleChange(view) {
+  handleMainChange(view) {
     let newView = `${view}`
     this.setState({ view: newView });
   }
@@ -28,9 +27,9 @@ class Director extends Component {
         <div>
         <NavBar 
           loggedIn={this.state.loggedIn}
-          handleChange={this.handleChange}  
+          handleMainChange={this.handleMainChange}  
         />
-        <GameSelection handleChange={this.handleChange}/>
+        <GameSelection handleMainChange={this.handleMainChange}/>
         </div>
       )
     } else if (page === "PF" || page === "SR" || page === "CoC") {
@@ -38,44 +37,34 @@ class Director extends Component {
         <div>
           <NavBar 
             loggedIn={this.state.loggedIn}
-            handleChange={this.handleChange}  
+            handleMainChange={this.handleMainChange}  
           />
           <Sorry />
         </div>
       )
-    } else if (page === "Login" || page === "Register") {
+    } else if (page === "Login") {
       return (
         <div>
           <NavBar 
             loggedIn={this.state.loggedIn}
-            handleChange={this.handleChange}  
+            handleMainChange={this.handleMainChange}  
           />
           <Login view={page}/>
         </div>
       )
-    } else if (page === "D&D") {
+    } else if (page === "DnD") {
       return (
         <div>
           <NavBar
             loggedIn={this.state.loggedIn}
-            handleChange={this.handleChange} 
+            handleMainChange={this.handleMainChange} 
           />
           <DndHome 
-            handleChange={this.handleChange}
+            handleMainChange={this.handleMainChange}
           />
         </div>
       )
-    } else if (page === 'NewChar') {
-      return (
-        <div>
-          <NavBar
-            loggedIn={this.state.loggedIn}
-            handleChange={this.handleChange} 
-          />
-          <NewChar />
-        </div>
-      )
-    }
+    } 
   }
 }
 

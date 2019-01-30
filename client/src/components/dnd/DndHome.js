@@ -1,38 +1,51 @@
 import React, { Component } from 'react';
-import CharacterItem from './CharacterItem';
+import CharacterList from './CharacterList'
+import NewChar from './NewChar';
+import CharacterViewer from './CharacterViewer';
 
 class DndHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      characters: [{name: 'test', class: 'test', race: 'test'}]
+      view: 'Home',
+      characters: [{name: 'test', class: 'test', race: 'test'}, {name: 'test2', class: 'test2', race: 'test2'}]
     }
+    this.handleDnDChange = this.handleDnDChange.bind(this);
+    this.handleNewClick = this.handleNewClick.bind(this);
   }
 
-  handleNewClick() {
-    this.props.handleChange('NewChar');
+  handleDnDChange(view) {
+    this.setState({ view: view });
+  }
+
+  handleNewClick(ev) {
+    this.handleDnDChange(ev.target.name);
   }
 
   render() {
-    return (
-      <div>
-        <button onClick={this.handleNewClick}>Create New Character</button>
+    let page = this.state.view;
+    if (page === 'Home') {
+      return (
         <div>
-          <ul>
-            {this.state.characters.map(character => {
-              let idx = this.state.characters.indexOf(character);
-              return (
-                <CharacterItem 
-                  key={this.state.characters.indexOf(character)}
-                  info={this.state.characters[idx]}
-                />
-              )
-            })}
-          </ul>
+          <button name='New' onClick={this.handleNewClick}>Create New Character</button>
+          <CharacterList 
+            characters={this.state.characters}
+            handleDnDChange={this.handleDnDChange}
+          />
         </div>
-      </div>
-    )
-  }
+      )
+    } else if (page === 'New') {
+      return (
+        <NewChar />
+      )
+    } else if (page === '1') {
+      return (
+        <CharacterViewer
+          info={this.state.characters[page]}
+        />
+      )
+    }
+  } 
 }
 
 export default DndHome;
