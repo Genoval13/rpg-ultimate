@@ -7,6 +7,12 @@ class Skills extends Component {
       skills : ['Acrobatics', 'Animal Handling', 'Arcana', 'Athletics', 'Deception', 'History', 'Insight', 'Intimidation', 'Investigation', 'Medicine']
     }
   }
+
+  render() {
+    return (
+      <h1>Skills</h1>
+    )
+  }
 }
 
 export default Skills;
