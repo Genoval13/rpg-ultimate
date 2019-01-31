@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../style/GameSelection.css'
+import '../style/GameSelection.css';
 
 class GameSelection extends Component {
   constructor(props) {
@@ -9,7 +9,6 @@ class GameSelection extends Component {
 
   handleGSClick = (ev) => {
     let view = ev.target.name;
-    console.log(view)
     this.props.handleMainChange(view);
   }
 
@@ -18,12 +17,12 @@ class GameSelection extends Component {
       <div className='gameSelectBody'>
         <h1 className='gameSelectTitle'>Choose Your Game:</h1>
         <div className='gameSelect1'>
-        <button className='gameBtn' name='DnD' onClick={this.handleGSClick}>D&D 5e</button>
-        <button className='gameBtn' name='SR' onClick={this.handleGSClick}>Shadowrun 4e</button>
+        <button className='gameBtn' id='dndBtn' name='DnD' onClick={this.handleGSClick}>D&D</button>
+        <button className='gameBtn' id='srBtn' name='SR' onClick={this.handleGSClick}>Shadowrun 4e</button>
       </div>
       <div className='gameSelect2'>  
-        <button className='gameBtn' name='PF' onClick={this.handleGSClick}>Pathfinder</button>
-        <button className='gameBtn' name='CoC' onClick={this.handleGSClick}>Call of Cthulu</button>
+        <button className='gameBtn' id='pfBtn' name='PF' onClick={this.handleGSClick}>Pathfinder</button>
+        <button className='gameBtn' id='cocBtn' name='CoC' onClick={this.handleGSClick}>Call of Cthulu</button>
         </div>
       </div>
     )

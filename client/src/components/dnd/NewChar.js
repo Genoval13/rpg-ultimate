@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Race from './newChar/Race';
+import Class from './newChar/Class';
 
 class NewChar extends Component {
   constructor(props) {
@@ -23,11 +24,23 @@ class NewChar extends Component {
     }
   }
 
+  updateRace(choice) {
+    this.setState({race : choice, current: 'class'});
+  }
+
+  updateClass(choice) {
+    this.setState({class: choice})
+  }
+
   render() {
     let stage = this.state.current;
     if (stage === 'race') {
       return (
-        <Race />
+        <Race updateRace={this.updateChar}/>
+      )
+    } else if (stage === 'class') {
+      return (
+        <Class />
       )
     }
   }

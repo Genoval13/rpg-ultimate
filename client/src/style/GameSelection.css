@@ -8,9 +8,9 @@
 }
 
 .gameBtn {
-  text-align: center;
+  font-size: 0;
   width: 25%;
-  height: 200px;
+  height: 190px;
   margin: 20px;
 }
 
@@ -20,4 +20,24 @@
 
 .gameSelect2 {
   text-align: center;
+}
+
+#dndBtn {
+  background: url(../img/D&D\ Logo.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+#srBtn {
+  background: url(../img/Shadowrun-5-Logo.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+#pfBtn {
+  background-image: url(../img/Pathfinder.png);
+  background-size: 100% 100%;
+}
+
+#cocBtn {
+  background-image: url(../img/cocLogo.png);
+  background-size: 100% 100%;
 }
