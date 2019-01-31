@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import CharacterList from './CharacterList'
 import NewChar from './NewChar';
 import CharacterViewer from './CharacterViewer';
+import '../../style/DndHome.css';
 
 class DndHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
       view: 'Home',
-      characters: [{name: 'test', class: 'test', race: 'test'}, {name: 'test2', class: 'test2', race: 'test2'}]
+      characters: [{name: 'test', class: 'test', race: 'test'}, {name: 'test2', class: 'test2', race: 'test2'},{name: 'test3', class: 'test3', race: 'test3'}]
     }
     this.handleDnDChange = this.handleDnDChange.bind(this);
     this.handleNewClick = this.handleNewClick.bind(this);
@@ -26,12 +27,13 @@ class DndHome extends Component {
     let page = this.state.view;
     if (page === 'Home') {
       return (
-        <div>
-          <button name='New' onClick={this.handleNewClick}>Create New Character</button>
-          <CharacterList 
-            characters={this.state.characters}
-            handleDnDChange={this.handleDnDChange}
-          />
+        <div className='dndHome'>
+            <button className='newBtn' name='New' onClick={this.handleNewClick}>Create New Character</button>
+            <h1 className='or'>OR</h1>
+            <CharacterList 
+              characters={this.state.characters}
+              handleDnDChange={this.handleDnDChange}
+            />
         </div>
       )
     } else if (page === 'New') {

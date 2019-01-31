@@ -17,7 +17,8 @@ class Director extends Component {
   }
 
   handleMainChange(view) {
-    let newView = `${view}`
+    let newView = `${view}`;
+    console.log(newView);
     this.setState({ view: newView });
   }
 
@@ -33,7 +34,7 @@ class Director extends Component {
         <GameSelection handleMainChange={this.handleMainChange}/>
         </div>
       )
-    } else if (page === "PF" || "SR" || "CoC") {
+    } else if (page === "PF" || page === "SR" || page === "CoC") {
       return (
         <div className='sorry'>
           <NavBar 

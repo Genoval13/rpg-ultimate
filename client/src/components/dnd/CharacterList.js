@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CharacterItem from './CharacterItem';
+import '../../style/CharacterList.css';
 
 class CharacterList extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class CharacterList extends Component {
 
   render() {
     return (
-      <div>
+      <div className='charList'>
         <ul>
           {this.props.characters.map(character => {
             let idx = this.props.characters.indexOf(character);

@@ -1,0 +1,23 @@
+/* .gameSelectBody {
+
+} */
+
+.gameSelectTitle {
+  text-align: center;
+  color: #feda6a;
+}
+
+.gameBtn {
+  text-align: center;
+  width: 25%;
+  height: 200px;
+  margin: 20px;
+}
+
+.gameSelect1 {
+  text-align: center;
+}
+
+.gameSelect2 {
+  text-align: center;
+}

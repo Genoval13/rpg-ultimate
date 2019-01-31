@@ -1,0 +1,17 @@
+.dndHome {
+  display: flex;
+  background-color: #1d1e22;
+  margin-top: -20px;
+  height: 100%;
+}
+
+.newBtn {
+  width: 45%;
+  height: 600px;
+  margin: 10px;
+  text-align: center;
+}
+
+.or {
+  color: #feda6a;
+}

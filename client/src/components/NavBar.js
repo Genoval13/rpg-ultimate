@@ -20,11 +20,11 @@ class NavBar extends Component {
     if (!this.state.loggedIn) {
       return (
         <div className='navBar'>
-          <ul className='navList'>
-            <li className='navItem'><button className='homeBtn' name='Home' onClick={this.handleNBClick}>Home</button></li>
-            <li className='navItem'><h1 className='navTitle'>RPG Ultimate</h1></li>
-            <li className='navItem'><button className='loginBtn' name='Login' onClick={this.handleNBClick}>Login/Register</button></li>
-          </ul>
+          <nav className='navList'>
+            <button className='homeBtn' name='Home' onClick={this.handleNBClick}>Home</button>
+            <button className='loginBtn' name='Login' onClick={this.handleNBClick}>Login/Register</button>
+          </nav>
+            <h2 className='navTitle'>RPG Ultimate</h2>
         </div>
       )
     } else {

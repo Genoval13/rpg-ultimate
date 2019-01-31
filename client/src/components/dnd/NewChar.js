@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Race from './newChar/Race';
 
 class NewChar extends Component {
   constructor(props) {
@@ -26,9 +27,7 @@ class NewChar extends Component {
     let stage = this.state.current;
     if (stage === 'race') {
       return (
-        <div>
-          <h1>Choose your race!</h1>
-        </div>
+        <Race />
       )
     }
   }

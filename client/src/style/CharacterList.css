@@ -1,0 +1,7 @@
+.charList {
+  width: 45%;
+  height: 600px;
+  margin: 10px;
+  overflow: auto;
+  background-color: #393f4d;
+}

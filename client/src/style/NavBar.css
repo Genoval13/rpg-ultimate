@@ -1,9 +1,31 @@
+.navBar {
+  background-color: #d4d4dc;
+}
+
 .navList {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.navItem {
-  display: inline;
+.homeBtn {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 70%;
+  width: 10%;
+}
+
+.loginBtn {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  height: 70%;
+  width: 10%;
+}
+
+.navTitle {
+  text-align: center;
+  margin-top: -15px;
+  margin-left: 100px;
+  padding-bottom: 20px;
 }
