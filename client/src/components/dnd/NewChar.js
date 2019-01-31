@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Race from './newChar/Race';
 import Class from './newChar/Class';
+import Skills from './newChar/Skills';
 
 class NewChar extends Component {
   constructor(props) {
@@ -22,6 +23,8 @@ class NewChar extends Component {
       background: '',
       inventory: []
     }
+    this.updateRace = this.updateRace.bind(this);
+    this.updateClass = this.updateClass.bind(this);
   }
 
   updateRace(choice) {
@@ -29,18 +32,22 @@ class NewChar extends Component {
   }
 
   updateClass(choice) {
-    this.setState({class: choice})
+    this.setState({class: choice, current: 'skills'})
   }
 
   render() {
     let stage = this.state.current;
     if (stage === 'race') {
       return (
-        <Race updateRace={this.updateChar}/>
+        <Race updateRace={this.updateRace}/>
       )
     } else if (stage === 'class') {
       return (
-        <Class />
+        <Class updateClass={this.updateClass}/>
+      )
+    } else if (stage === 'skills') {
+      return (
+        <Skills />
       )
     }
   }

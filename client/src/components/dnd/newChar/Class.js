@@ -15,7 +15,7 @@ class Class extends Component {
       <div>
           <form onSubmit={this.handleClassSubmit}>
             <label>
-              Choose your race:
+              Choose your class:
               <select value=''>
                 <option value=''>--Please select a race--</option>
                 <option value='Barbarian'>Barbarian</option>

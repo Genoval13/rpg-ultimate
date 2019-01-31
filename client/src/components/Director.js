@@ -18,7 +18,6 @@ class Director extends Component {
 
   handleMainChange(view) {
     let newView = `${view}`;
-    console.log(newView);
     this.setState({ view: newView });
   }
 
