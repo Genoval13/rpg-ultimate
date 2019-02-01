@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import RaceDescription from './descriptions/RaceDescription'
+import RaceDescription from './descriptions/RaceDescription';
+import '../../../style/Race.css';
 
 class Race extends Component {
   constructor(props) {
@@ -31,8 +32,8 @@ class Race extends Component {
         <div>
             <form onSubmit={this.handleRaceSubmit}>
               <label>
-                Choose your race:
-                <select defaultValue='' onChange={this.handleRaceChange}>
+                <h1 className='text'>Choose your race:</h1>
+                <select className='text' defaultValue='' onChange={this.handleRaceChange}>
                   <option value=''>--Please select a race--</option>
                   <option value='1'>Dwarf</option>
                   <option value='2'>Elf</option>

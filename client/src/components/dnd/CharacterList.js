@@ -20,7 +20,7 @@ class CharacterList extends Component {
             let idx = this.props.characters.indexOf(character);
             return (
               <CharacterItem 
-                key={this.props.characters.indexOf(character)}
+                key={idx}
                 info={this.props.characters[idx]}
                 index={idx}
                 passingUpChange={this.passingUpChange}

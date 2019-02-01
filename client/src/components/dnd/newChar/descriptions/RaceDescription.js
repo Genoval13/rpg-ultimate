@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import '../../../../style/Race.css';
 
 class RaceDescription extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      race: null
+      race: ''
     }
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.current !== prevProps.current) {
+    if (this.props.current !== prevProps.current && this.props.current !== '') {
       const options = {
         method: "GET",
         headers: {
@@ -23,14 +24,14 @@ class RaceDescription extends Component {
         .then(res => {
           this.setState({ race : res});
         })
-    }
+    } 
   }
 
   render() {
-    if (this.state.race !== null) {
+    if (this.state.race !== '') {
       let asi = this.state.race.ability_bonuses
       return (
-        <div>
+        <div className='text'>
           <h1>Description:</h1>
           <h2>{this.state.race.name}</h2>
           <ul className='raceTraits'>

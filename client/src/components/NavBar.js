@@ -24,7 +24,7 @@ class NavBar extends Component {
             <button className='homeBtn' name='Home' onClick={this.handleNBClick}>Home</button>
             <button className='loginBtn' name='Login' onClick={this.handleNBClick}>Login/Register</button>
           </nav>
-            <h2 className='navTitle'>RPG Ultimate</h2>
+            <h1 className='navTitle'>RPG Ultimate</h1>
         </div>
       )
     } else {

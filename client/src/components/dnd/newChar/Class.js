@@ -1,39 +1,60 @@
 import React, { Component } from 'react';
+import ClassDescription from './descriptions/ClassDescription';
 
 class Class extends Component {
   constructor(props) {
     super(props)
+    this.state ={
+      current: null
+    }
+    this.handleClassChange = this.handleClassChange.bind(this);
     this.handleClassSubmit = this.handleClassSubmit.bind(this);
   }
 
-  handleClassSubmit(ev) {
-    this.props.updateClass(ev.target.value);
+  handleClassChange(ev) {
+    this.setState({ current: ev.target.value});
   }
+
+  handleClassSubmit(ev) {
+    ev.preventDefault();
+
+    if (ev.target.value !== '') {
+      this.props.updateClass(ev.target.value);
+    } else {
+      this.props.updateClass('5');
+    }
+  }
+
 
   render() {
     return (
       <div>
+        <div>
           <form onSubmit={this.handleClassSubmit}>
             <label>
               Choose your class:
-              <select value=''>
+              <select defaultValue='' onChange={this.handleClassChange}>
                 <option value=''>--Please select a race--</option>
-                <option value='Barbarian'>Barbarian</option>
-                <option value='Bard'>Bard</option>
-                <option value='Cleric'>Cleric</option>
-                <option value='Druid'>Druid</option>
-                <option value='Fighter'>Fighter</option>
-                <option value='Monk'>Monk</option>
-                <option value='Paladin'>Paladin</option>
-                <option value='Ranger'>Ranger</option>
-                <option value='Rogue'>Rogue</option>
-                <option value='Sorceror'>Sorceror</option>
-                <option value='Warlock'>Warlock</option>
-                <option value='Wizard'>Wizard</option>
+                <option value='1'>Barbarian</option>
+                <option value='2'>Bard</option>
+                <option value='3'>Cleric</option>
+                <option value='4'>Druid</option>
+                <option value='5'>Fighter</option>
+                <option value='6'>Monk</option>
+                <option value='7'>Paladin</option>
+                <option value='8'>Ranger</option>
+                <option value='9'>Rogue</option>
+                <option value='10'>Sorceror</option>
+                <option value='11'>Warlock</option>
+                <option value='12'>Wizard</option>
               </select>
             </label>
             <input type='submit' value='Submit' />
           </form>
+        </div>
+        <div>
+          <ClassDescription current={this.state.current}/>
+        </div>
         </div>
     )
   }

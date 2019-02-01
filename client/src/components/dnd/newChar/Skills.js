@@ -4,7 +4,7 @@ class Skills extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      skills : ['Acrobatics', 'Animal Handling', 'Arcana', 'Athletics', 'Deception', 'History', 'Insight', 'Intimidation', 'Investigation', 'Medicine']
+      skills : []
     }
   }
 
