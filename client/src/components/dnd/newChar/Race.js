@@ -32,7 +32,7 @@ class Race extends Component {
         <div>
             <form onSubmit={this.handleRaceSubmit}>
               <label>
-                <h1 className='text'>Choose your race:</h1>
+                <h2 className='text'>Choose your race:</h2>
                 <select className='text' defaultValue='' onChange={this.handleRaceChange}>
                   <option value=''>--Please select a race--</option>
                   <option value='1'>Dwarf</option>

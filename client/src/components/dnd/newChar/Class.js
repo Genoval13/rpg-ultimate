@@ -12,6 +12,7 @@ class Class extends Component {
   }
 
   handleClassChange(ev) {
+    console.log(ev.target.value);
     this.setState({ current: ev.target.value});
   }
 
@@ -32,7 +33,7 @@ class Class extends Component {
         <div>
           <form onSubmit={this.handleClassSubmit}>
             <label>
-              Choose your class:
+              <h2>Choose your class:</h2>
               <select defaultValue='' onChange={this.handleClassChange}>
                 <option value=''>--Please select a race--</option>
                 <option value='1'>Barbarian</option>
