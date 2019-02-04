@@ -12,15 +12,14 @@ class Class extends Component {
   }
 
   handleClassChange(ev) {
-    console.log(ev.target.value);
     this.setState({ current: ev.target.value});
   }
 
   handleClassSubmit(ev) {
     ev.preventDefault();
 
-    if (ev.target.value !== '') {
-      this.props.updateClass(ev.target.value);
+    if (this.state.current !== '') {
+      this.props.updateClass(this.state.current);
     } else {
       this.props.updateClass('5');
     }

@@ -15,12 +15,12 @@ class Race extends Component {
   handleRaceChange(ev) {
     this.setState({ current: ev.target.value});
   }
-
+  
   handleRaceSubmit(ev) {
     ev.preventDefault();
-
-    if (ev.target.value !== '') {
-      this.props.updateRace(ev.target.value);
+    
+    if (this.state.current !== '') {
+      this.props.updateRace(this.state.current);
     } else {
       this.props.updateRace('4');
     }

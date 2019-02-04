@@ -4,8 +4,7 @@ class ClassDescription extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dndApi : '',
-      betaApi : ''
+      class: ''
     }
   }
 
@@ -23,10 +22,8 @@ class ClassDescription extends Component {
         .then(res => res.json())
         .then(res => {
           console.log(res)
-          this.setState({ dndApi : res});
-        })
-
-      // fetch(`https://api-beta.open5e.com/classes/${this.props.}/`)
+          this.setState({ class : res });
+        });
     }
   }
 
@@ -37,7 +34,30 @@ class ClassDescription extends Component {
           <h1>Description:</h1>
           <div className='hp'>
             <h3>Hit Points:</h3>
-            {/* <h4>Hit Die: {this.state.class.hit_die}</h4> */}
+            <h4>Hit Die: {this.state.class.hit_die}</h4>
+          </div>
+          <div className='prof'>
+            <h3>Proficiencies: </h3>
+            <ul>
+              {this.state.class.proficiencies.map(prof => {
+                return (
+                  <li>{prof.name}</li>
+                )
+              })}
+            </ul>
+          </div>
+          <div className='savingThrows'>
+            <h3>Saving Throws: </h3>
+            <ul>
+              {this.state.class.saving_throws.map(save => {
+                return (
+                  <li>{save.name}</li>
+                )
+              })}
+            </ul>
+          </div>
+          <div className='classFeats'>
+              
           </div>
         </div>
       )
