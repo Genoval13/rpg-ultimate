@@ -29,12 +29,12 @@ class DndHome extends Component {
       return (
         <div className='dndHome'>
           <div className='newDiv'>
-            <h2 className='DnDHomeTitles'>Create A New Character</h2>
+            <h2 className='dndHomeTitles'>Create A New Character</h2>
             <button className='newBtn' name='New' onClick={this.handleNewClick}></button>
           </div>
           <h1 className='or'>OR</h1>
           <div className='newDiv' id='list'>
-            <h2 className='DnDHomeTitles'>Current Characters: </h2>
+            <h2 className='dndHomeTitles'>Current Characters: </h2>
             <CharacterList 
               characters={this.state.characters}
               handleDnDChange={this.handleDnDChange}

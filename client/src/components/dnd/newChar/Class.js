@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ClassDescription from './descriptions/ClassDescription';
+import '../../../style/Class.css';
 
 class Class extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class Class extends Component {
         <div>
           <form onSubmit={this.handleClassSubmit}>
             <label>
-              <h2>Choose your class:</h2>
+              <h2 className='classChoose'>Choose your class:</h2>
               <select defaultValue='' onChange={this.handleClassChange}>
                 <option value=''>--Please select a race--</option>
                 <option value='1'>Barbarian</option>

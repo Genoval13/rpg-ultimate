@@ -56,9 +56,6 @@ class ClassDescription extends Component {
               })}
             </ul>
           </div>
-          <div className='classFeats'>
-              
-          </div>
         </div>
       )
     } else {
