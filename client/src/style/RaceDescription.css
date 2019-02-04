@@ -1,0 +1,17 @@
+.race {
+  background-color: antiquewhite;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.raceName {
+  text-align: center;
+}
+
+.desc {
+  margin-left: 20px;
+}
+
+#text {
+  text-align: center;
+}

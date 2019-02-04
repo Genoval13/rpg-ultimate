@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../../../style/Race.css';
+import '../../../../style/RaceDescription.css';
 
 class RaceDescription extends Component {
   constructor(props) {
@@ -29,53 +30,55 @@ class RaceDescription extends Component {
 
   render() {
     if (this.state.race !== '') {
-      let asi = this.state.race.ability_bonuses
+      let asi = this.state.race.ability_bonuses;
       return (
-        <div className='text'>
-          <h1>Description:</h1>
-          <h2>{this.state.race.name}</h2>
-          <ul className='raceTraits'>
-            <h4>Traits: </h4>
-            <li>
-              Ability Score Bonuses:
+        <div>
+          <h1 className='text' id='text'>Description:</h1>
+          <div className='race'>
+          <h2 className='raceName'>{this.state.race.name}</h2>
+            <h4 className='desc'>Traits: </h4>
+              <p className='desc'>Ability Score Bonuses:</p>
               <ul className='raceASI'>
-                <li>Strength:{asi[0]}</li>
-                <li>Dexterity:{asi[1]}</li>
-                <li>Constitution:{asi[2]}</li>
-                <li>Wisdom:{asi[3]}</li>
-                <li>Intelligence:{asi[4]}</li>
-                <li>Charisma:{asi[5]}</li>
+                <li>Strength: +{asi[0]}</li>
+                <li>Dexterity: +{asi[1]}</li>
+                <li>Constitution: +{asi[2]}</li>
+                <li>Wisdom: +{asi[3]}</li>
+                <li>Intelligence: +{asi[4]}</li>
+                <li>Charisma: +{asi[5]}</li>
               </ul>
-            </li>
-            <li>Age: <br></br>{this.state.race.age}</li>
-            <li>Alignment: <br></br>{this.state.race.alignment}</li>
-            <li>Size: {this.state.race.size}</li>
-            <li>Speed: {this.state.race.speed}</li>
-            <h4>Racial Feats: </h4>
+            <h4 className='desc'>Age:</h4> 
+            <p className='desc'>{this.state.race.age}</p>
+            <h4 className='desc'>Alignment:</h4> 
+            <p className='desc'>{this.state.race.alignment}</p>
+            <h4 className='desc'>Size:</h4> 
+            <p className='desc'>{this.state.race.size}</p>
+            <h4 className='desc'>Speed: </h4> 
+            <p className='desc'>{this.state.race.speed} ft.</p>
+            <h4 className='desc'>Racial Feats: </h4>
             {this.state.race.traits.map(trait => {
               return (
-                <li>{trait.name}</li>
+                <li className='desc'>{trait.name}</li>
               )
             })}
-            <h4>Languages: </h4>
+            <h4 className='desc'>Languages: </h4>
             {this.state.race.languages.map(lang => {
               return (
-              <li>{lang.name}</li>
+              <li className='desc'>{lang.name}</li>
               )
             })}
-            <h4>Subraces: </h4>
+            <h4 className='desc'>Subraces: </h4>
             {this.state.race.subraces.map(sub => {
               return (
-                <li>{sub.name}</li>
+                <li className='desc'>{sub.name}</li>
               )
             })}
-          </ul>
+          </div>
         </div>
       )
     } else {
       return (
         <div>
-          <h1>Description:</h1>
+          <h1 className='text' id='text'>Description:</h1>
         </div>
       )
     }
