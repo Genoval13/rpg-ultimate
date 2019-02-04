@@ -19,4 +19,4 @@ const getChar = (req, res) => {
     .then((char) => res.send(char));
 }
 
-module.exports = {createChar}
+module.exports = {createChar, getChar};

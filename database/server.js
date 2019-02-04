@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const User = require('../database/models/User');
+const Character = require('../database/models/Characters');
 
 const app = express();
 
