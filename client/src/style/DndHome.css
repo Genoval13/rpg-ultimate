@@ -5,13 +5,31 @@
   height: 100%;
 }
 
-.newBtn {
+.newDiv {
   width: 45%;
   height: 600px;
-  margin: 10px;
+  margin: 20px;
+}
+
+.DnDHomeTitles {
   text-align: center;
+  color: snow;
+}
+
+.newBtn {
+  width: 90%;
+  height: 600px;
+  text-align: center;
+  font-size: 50px;
+  background-image: url('../img/newCharacterLogo.png');
+  background-size: 100% 100%;
 }
 
 .or {
   color: #feda6a;
+  margin-top: 300px;
+}
+
+#list {
+  float: right;
 }
