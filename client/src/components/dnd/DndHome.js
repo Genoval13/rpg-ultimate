@@ -9,7 +9,7 @@ class DndHome extends Component {
     super(props);
     this.state = {
       view: 'Home',
-      characters: [{name: 'test', class: 'test', race: 'test'}, {name: 'test2', class: 'test2', race: 'test2'},{name: 'test3', class: 'test3', race: 'test3'}]
+      characters: [{name: 'Elle', class: 'Druid', race: 'Elf'}, {name: 'Berkley', class: 'Fighter', race: 'Human'},{name: 'Ronald', class: 'Rogue', race: 'Halfling'}]
     }
     this.handleDnDChange = this.handleDnDChange.bind(this);
     this.handleNewClick = this.handleNewClick.bind(this);

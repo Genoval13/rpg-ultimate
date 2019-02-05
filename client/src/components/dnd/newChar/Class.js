@@ -35,7 +35,7 @@ class Class extends Component {
             <label>
               <h2 className='classChoose'>Choose your class:</h2>
               <select defaultValue='' onChange={this.handleClassChange}>
-                <option value=''>--Please select a race--</option>
+                <option value=''>--Please select a class--</option>
                 <option value='1'>Barbarian</option>
                 <option value='2'>Bard</option>
                 <option value='3'>Cleric</option>
