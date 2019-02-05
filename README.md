@@ -23,7 +23,6 @@ RPG Ultimate is a full stack application built with these technologies:
 - ExpressJS
 - PostgreSQL
 - KnexJS
-- Nodemon
 
 ### Frontend
 
