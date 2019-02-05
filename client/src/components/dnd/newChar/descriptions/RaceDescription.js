@@ -24,6 +24,7 @@ class RaceDescription extends Component {
         .then(res => res.json())
         .then(res => {
           this.setState({ race : res});
+          console.log(res);
         })
     } 
   }
